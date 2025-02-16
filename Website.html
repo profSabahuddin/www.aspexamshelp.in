@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBA Study Portal - 2nd Semester</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .floating-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        .notification {
+            transition: all 0.3s ease;
+            transform: translateY(-100%);
+        }
+        .notification.show {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Notification for new uploads -->
+    <div id="notification" class="notification fixed top-0 left-0 right-0 bg-green-500 text-white p-4 text-center hidden">
+        New materials have been uploaded!
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-800 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">BBA Study Portal</h1>
+            <div class="space-x-4">
+                <a href="#home" class="hover:text-blue-200">Home</a>
+                <a href="#materials" class="hover:text-blue-200">Materials</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-16">
+        <div class="container mx-auto text-center px-4">
+            <h2 class="text-4xl font-bold mb-4">BBA Second Semester Resources</h2>
+            <p class="text-xl">Access quality exam preparation materials</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto py-8 px-4">
+        <!-- Subject Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Organizational Behavior -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-blue-600 text-white p-4">
+                    <h3 class="text-xl font-bold">Organizational Behavior</h3>
+                    <p class="text-sm">OB</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <!-- Replace GOOGLE_DRIVE_LINK with your actual Google Drive sharing link -->
+                    <a href="https://drive.google.com/drive/folders/1Ann6lNbUftdthSSflubjHEDYoBHb8dlW?usp=sharing" target="_blank" 
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-blue-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Marketing Management -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-green-600 text-white p-4">
+                    <h3 class="text-xl font-bold">Marketing Management</h3>
+                    <p class="text-sm">MM</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <a href="https://drive.google.com/drive/folders/150Jj6WNMiUjcsYLQFVED9KKb9e-jb11E?usp=sharing" target="_blank"
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-green-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cost Accounting -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-purple-600 text-white p-4">
+                    <h3 class="text-xl font-bold">Cost Accounting</h3>
+                    <p class="text-sm">CAaR</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <a href="https://drive.google.com/drive/folders/1B1nM0lHsYxnDXx2zb__FIMZUTn0XZYWD?usp=sharing" target="_blank"
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-purple-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quantitative Analysis -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-red-600 text-white p-4">
+                    <h3 class="text-xl font-bold">Quantitative Analysis</h3>
+                    <p class="text-sm">QAfB</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <a href="https://drive.google.com/drive/folders/1vZJI5P9RMN7f6es0FlVzmJcx6iLCoOIX?usp=sharing" target="_blank"
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-red-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- English II -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-yellow-600 text-white p-4">
+                    <h3 class="text-xl font-bold">English II</h3>
+                    <p class="text-sm">E2</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <a href="https://drive.google.com/drive/folders/1xpr4bzFPYgELNALqAmvy2S3eZjJyR6Bm?usp=sharing" target="_blank"
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-yellow-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hindi II -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="bg-indigo-600 text-white p-4">
+                    <h3 class="text-xl font-bold">Hindi II</h3>
+                    <p class="text-sm">H2</p>
+                </div>
+                <div class="p-4 space-y-4">
+                    <a href="https://drive.google.com/drive/folders/1DRWPhHwJCsoBOu7VYs1Uww66f4RIpbgA?usp=sharing" target="_blank"
+                       class="flex justify-between items-center p-3 bg-gray-50 rounded hover:bg-gray-100">
+                        <span>Exam Materials</span>
+                        <i class="fas fa-download text-indigo-600"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Upload Section (Password Protected) -->
+        <div class="mt-12 bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-2xl font-bold mb-4">Upload Materials</h3>
+            <form id="uploadForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Admin Password</label>
+                    <input type="password" id="adminPassword" class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Select Subject</label>
+                    <select class="w-full p-2 border rounded">
+                        <option>Organizational Behavior</option>
+                        <option>Marketing Management</option>
+                        <option>Cost Accounting</option>
+                        <option>Quantitative Analysis</option>
+                        <option>English II</option>
+                        <option>Hindi II</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700 mb-2">Upload File</label>
+                    <input type="file" class="w-full p-2 border rounded">
+                </div>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+                    Upload Material
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919972819262" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp text-xl mr-2"></i>
+        Contact via WhatsApp
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h4 class="text-xl font-bold mb-4">Contact Information</h4>
+                <p class="mb-2">
+                    <i class="fas fa-phone mr-2"></i>+91 9972819262
+                </p>
+                <p>
+                    <i class="fas fa-envelope mr-2"></i>sabahuddin227@gmail.com
+                </p>
+            </div>
+            <div class="text-center mt-8 pt-8 border-t border-gray-700">
+                <p>&copy; 2025 BBA Study Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple password protection for admin uploads
+        document.getElementById('uploadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('adminPassword').value;
+            // Change 'Prof' to your desired password
+            if (password === 'Prof') {
+                // Handle file upload here
+                showNotification();
+            } else {
+                alert('Incorrect password');
+            }
+        });
+
+        function showNotification() {
+            const notification = document.getElementById('notification');
+            notification.classList.remove('hidden');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
